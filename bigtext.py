@@ -24,8 +24,6 @@ Urwid example demonstrating use of the BigText widget.
 """
 
 import urwid
-import urwid.raw_display
-
 
 class SwitchingPadding(urwid.Padding):
     def padding_values(self, size, focus):

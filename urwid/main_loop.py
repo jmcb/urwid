@@ -34,9 +34,8 @@ class ExitMainLoop(Exception):
     pass
 
 class MainLoop(object):
-    def __init__(self, widget, palette=[], screen=None, 
-        handle_mouse=True, input_filter=None, unhandled_input=None,
-        event_loop=None):
+    def __init__(self, widget, palette=[], screen=None,
+        input_filter=None, unhandled_input=None, event_loop=None):
         """
         Simple main loop implementation.
 
@@ -45,8 +44,6 @@ class MainLoop(object):
         palette -- initial palette for screen
         screen -- screen object or None to use raw_display.Screen,
             stored as self.screen
-        handle_mouse -- True to process mouse events, passed to
-            self.screen
         input_filter -- a function to filter input before sending
             it to self.widget, called from self.input_filter
         unhandled_input -- a function called when input is not
@@ -66,11 +63,11 @@ class MainLoop(object):
         html_fragment.HtmlGenerator.
         """
         self.widget = widget
-        self.handle_mouse = handle_mouse
+        self.handle_mouse = False
         
         if not screen:
-            import raw_display
-            screen = raw_display.Screen()
+            import curses_display
+            screen = curses_display.Screen()
 
         if palette:
             screen.register_palette(palette)

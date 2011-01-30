@@ -82,19 +82,7 @@ class Screen(BaseScreen, RealTerminal):
         return [sys.stdin.fileno()]
 
     def set_mouse_tracking(self):
-        """
-        Enable mouse tracking.  
-        
-        After calling this function get_input will include mouse
-        click events along with keystrokes.
-        """
-        rval = curses.mousemask( 0 
-            | curses.BUTTON1_PRESSED | curses.BUTTON1_RELEASED
-            | curses.BUTTON2_PRESSED | curses.BUTTON2_RELEASED
-            | curses.BUTTON3_PRESSED | curses.BUTTON3_RELEASED
-            | curses.BUTTON4_PRESSED | curses.BUTTON4_RELEASED
-            | curses.BUTTON_SHIFT | curses.BUTTON_ALT
-            | curses.BUTTON_CTRL )
+        pass
 
     def start(self):
         """

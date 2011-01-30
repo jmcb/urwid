@@ -24,19 +24,13 @@ Keyboard test application
 """
 
 import urwid.curses_display
-import urwid.raw_display
 import urwid.web_display
 import urwid
-
-import sys
 
 if urwid.web_display.is_web_request():
     Screen = urwid.web_display.Screen
 else:
-    if len(sys.argv)>1 and sys.argv[1][:1] == "r":
-        Screen = urwid.raw_display.Screen
-    else:
-        Screen = urwid.curses_display.Screen
+    Screen = urwid.curses_display.Screen
 
 def key_test():
     screen = Screen()

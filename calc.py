@@ -32,14 +32,14 @@ Features:
 """
 
 import urwid
-import urwid.raw_display
 import urwid.web_display
+import urwid.curses_display
 
 # use appropriate Screen class
 if urwid.web_display.is_web_request():
     Screen = urwid.web_display.Screen
 else:
-    Screen = urwid.raw_display.Screen
+    Screen = urwid.curses_display.Screen
 
 
 def div_or_none(a,b):

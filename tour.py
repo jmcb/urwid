@@ -24,8 +24,8 @@ Urwid tour.  Shows many of the standard widget types and features.
 """
 
 import urwid
-import urwid.raw_display
 import urwid.web_display
+import urwid.curses_display
 
 def main():
     text_header = ("Welcome to the urwid tour!  "
@@ -312,7 +312,7 @@ def main():
     if urwid.web_display.is_web_request():
         screen = urwid.web_display.Screen()
     else:
-        screen = urwid.raw_display.Screen()
+        screen = urwid.curses_display.Screen()
 
     def unhandled(key):
         if key == 'f8':

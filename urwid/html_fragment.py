@@ -239,8 +239,6 @@ def screenshot_init( sizes, keys ):
     
     import curses_display
     curses_display.Screen = HtmlGenerator
-    import raw_display
-    raw_display.Screen = HtmlGenerator
     
     HtmlGenerator.sizes = sizes
     HtmlGenerator.keys = keys

@@ -1,5 +1,17 @@
 # -*- coding: utf-8 -*-
 
+Urwi(ndows) 0.0.0.1
+
+    * Forked from Urwid 0.9.9.1's current trunk.
+
+    * Removed raw_display in favour of the default curses_display.
+
+    * Disabled mouse support until pdcurses' method is worked out.
+
+    * Windows support!
+
+---------------------------------------------------------------------
+
 Urwid 0.9.9.1
 
     * Fix for ListBox snapping to selectable widgets taller than the

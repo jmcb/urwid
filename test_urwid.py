@@ -25,8 +25,6 @@ import urwid
 import unittest
 from test import test_support
 from doctest import DocTestSuite
-from urwid.vterm_test import TermTest
-
 
 class DecodeOneTest(unittest.TestCase):
     def gwt(self, ch, exp_ord, exp_pos):
@@ -2262,7 +2260,6 @@ def test_main():
         CanvasOverlayTest,
         CanvasPadTrimTest,
         WidgetSquishTest,
-        TermTest,
         ]:
         if test_support.run_unittest(t): 
             return
@@ -2273,12 +2270,11 @@ def test_main():
         urwid.display_common,
         urwid.main_loop,
         urwid.monitored_list,
-        urwid.raw_display,
         'urwid.split_repr', # override function with same name
         urwid.util,
         ]:
         if test_support.run_unittest(DocTestSuite(mod)):
-            return    
+            return
 
 if __name__ == '__main__': test_main()
 

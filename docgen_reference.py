@@ -21,7 +21,6 @@
 
 import pydoc
 import urwid.curses_display
-import urwid.raw_display
 import urwid.web_display
 import urwid.html_fragment
 import urwid
@@ -340,7 +339,6 @@ def main():
         (urwid.register_signal,"register_signal", None),
         (urwid.emit_signal,"emit_signal", None),
         (None,"User interface wrappers",None),
-        (urwid.raw_display.Screen, "raw_display.Screen",None),
         (urwid.curses_display.Screen, "curses_display.Screen",None),
         (urwid.web_display.Screen,"web_display.Screen",None),
         (None,"Screen capture", None),
